@@ -16,6 +16,16 @@ const ResearchersTable: React.FC = () => {
       });
   }, []);
 
+  const onDelete = (id: number) => {
+    axios.delete(`http://localhost:8000/api/researchers/${id}/`)
+      .then(() => {
+        setResearchers(researchers.filter(researcher => researcher.id !== id));
+      })
+      .catch((error: AxiosError) => {
+        console.error('There was an error deleting the publication!', error);
+      });
+  };
+
   return (
     <div className="table-container">
       <table className="researchers-table">
@@ -23,6 +33,8 @@ const ResearchersTable: React.FC = () => {
           <tr>
             <th>Nom</th>
             <th>Spécialité</th>
+            <th></th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -30,6 +42,8 @@ const ResearchersTable: React.FC = () => {
             <tr key={researcher.id}>
               <td>{researcher.name}</td>
               <td>{researcher.specialty}</td>
+              <td className='action'>Modifier</td>
+              <td className='action' onClick={() => onDelete(researcher.id)}>Supprimer</td>
             </tr>
           ))}
         </tbody>

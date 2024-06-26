@@ -17,9 +17,18 @@ const PublicationsTable: React.FC = () => {
       });
   }, []);
 
+  const onDelete = (id: number) => {
+    axios.delete(`http://localhost:8000/api/publications/${id}/`)
+      .then(() => {
+        setPublications(publications.filter(publication => publication.id !== id));
+      })
+      .catch((error: AxiosError) => {
+        console.error('There was an error deleting the publication!', error);
+      });
+  };
+
   return (
     <div className="table-container">
-      <h2>Liste des Publications</h2>
       <table className="publications-table">
         <thead>
           <tr>
@@ -27,6 +36,8 @@ const PublicationsTable: React.FC = () => {
             <th>Titre</th>
             <th>Résumé</th>
             <th>Date de Publication</th>
+            <th></th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -36,6 +47,8 @@ const PublicationsTable: React.FC = () => {
               <td>{publication.title}</td>
               <td>{publication.summary}</td>
               <td>{publication.publication_date}</td>
+              <td className='action'>Modifier</td>
+              <td className='action' onClick={() => onDelete(publication.id)}>Supprimer</td>
             </tr>
           ))}
         </tbody>

@@ -31,4 +31,7 @@
   .publications-table tr:hover {
     background-color: #ddd;
   }
-  
+
+  .action {
+    cursor: pointer;
+  }
