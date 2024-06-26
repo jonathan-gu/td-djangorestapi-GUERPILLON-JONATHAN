@@ -20,7 +20,7 @@ const Projects: React.FC = () => {
   return (
     <>
       <h2>Projets</h2>
-      <button onClick={() => navigate('/add-project')}>Ajouter un Chercheur</button>
+      <button onClick={() => navigate('/add-project')}>Ajouter un Projet</button>
       <ProjectsTable />
     </>
   )

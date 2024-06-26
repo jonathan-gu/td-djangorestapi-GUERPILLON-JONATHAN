@@ -1,4 +1,4 @@
-import AddResearcherForm from "../../components/AddResearchForm/AddResearchForm"
+import AddResearcherForm from "../../components/AddResearcherForm/AddResearcherForm"
 
 const AddResearcherPage = () => {
     return (

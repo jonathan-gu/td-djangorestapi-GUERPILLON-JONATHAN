@@ -1,5 +1,9 @@
+import AddProjectForm from "../../components/AddProjectForm/AddProjectForm"
+
 const AddProjectPage = () => {
-    return <></>
+    return (
+        <AddProjectForm />
+    )
 }
 
 export default AddProjectPage

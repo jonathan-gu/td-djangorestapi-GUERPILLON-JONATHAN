@@ -20,7 +20,7 @@ const Publications: React.FC = () => {
   return (
     <>
       <h2>Publications</h2>
-      <button onClick={() => navigate('/add-publication')}>Ajouter un Chercheur</button>
+      <button onClick={() => navigate('/add-publication')}>Ajouter un publication</button>
       <PublicationsTable />
     </>
   )

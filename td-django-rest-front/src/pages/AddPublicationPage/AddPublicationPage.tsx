@@ -1,5 +1,9 @@
+import AddPublicationForm from "../../components/AddPublicationForm/AddPublicationForm"
+
 const AddPublicationPage = () => {
-    return <></>
+    return (
+        <AddPublicationForm />
+    )
 }
 
 export default AddPublicationPage
