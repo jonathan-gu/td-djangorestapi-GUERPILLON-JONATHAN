@@ -7,7 +7,7 @@ const Navbar: React.FC = () => {
     <nav className="navbar">
       <h1 className="navbar-brand">My Research App</h1>
       <ul className="navbar-links">
-        <li><Link to="/">Chercheurs</Link></li>
+        <li><Link to="/researchers">Chercheurs</Link></li>
         <li><Link to="/projects">Projets</Link></li>
         <li><Link to="/publications">Publications</Link></li>
       </ul>

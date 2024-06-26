@@ -7,7 +7,12 @@ const ResearcherProjectsTable: React.FC = () => {
   const [researcherProjects, setResearcherProjects] = useState<ResearcherProject[]>([]);
 
   useEffect(() => {
-    axios.get<ResearcherProject[]>('http://localhost:8000/api/projects/')
+    const token = localStorage.getItem('token');
+    axios.get<ResearcherProject[]>('http://localhost:8000/api/projects/', {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
       .then((response: AxiosResponse<ResearcherProject[]>) => {
         setResearcherProjects(response.data);
       })
@@ -17,7 +22,12 @@ const ResearcherProjectsTable: React.FC = () => {
   }, []);
 
   const onDelete = (id: number) => {
-    axios.delete(`http://localhost:8000/api/projects/${id}/`)
+    const token = localStorage.getItem('token');
+    axios.delete(`http://localhost:8000/api/projects/${id}/`, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
       .then(() => {
         setResearcherProjects(researcherProjects.filter(researcherProject => researcherProject.id !== id));
       })

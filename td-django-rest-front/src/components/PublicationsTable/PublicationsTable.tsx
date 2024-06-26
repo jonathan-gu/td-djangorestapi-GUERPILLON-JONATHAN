@@ -8,7 +8,12 @@ const PublicationsTable: React.FC = () => {
   const [publications, setPublications] = useState<Publication[]>([]);
 
   useEffect(() => {
-    axios.get<Publication[]>('http://localhost:8000/api/publications/')
+    const token = localStorage.getItem('token');
+    axios.get<Publication[]>('http://localhost:8000/api/publications/', {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
       .then((response: AxiosResponse<Publication[]>) => {
         setPublications(response.data);
       })
@@ -18,7 +23,12 @@ const PublicationsTable: React.FC = () => {
   }, []);
 
   const onDelete = (id: number) => {
-    axios.delete(`http://localhost:8000/api/publications/${id}/`)
+    const token = localStorage.getItem('token');
+    axios.delete(`http://localhost:8000/api/publications/${id}/`, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
       .then(() => {
         setPublications(publications.filter(publication => publication.id !== id));
       })
@@ -32,7 +42,6 @@ const PublicationsTable: React.FC = () => {
       <table className="publications-table">
         <thead>
           <tr>
-            <th>ID</th>
             <th>Titre</th>
             <th>Résumé</th>
             <th>Date de Publication</th>
@@ -43,7 +52,6 @@ const PublicationsTable: React.FC = () => {
         <tbody>
           {publications.map(publication => (
             <tr key={publication.id}>
-              <td>{publication.id}</td>
               <td>{publication.title}</td>
               <td>{publication.summary}</td>
               <td>{publication.publication_date}</td>
