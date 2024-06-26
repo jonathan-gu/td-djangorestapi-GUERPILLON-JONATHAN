@@ -9,4 +9,5 @@ router.register(r'publications', views.PublicationViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
+    # path('projectsByProjectLeader/', views.ResearchProjectListByProjectLeader.as_view(), name='projects_by_project_leader')
 ]
