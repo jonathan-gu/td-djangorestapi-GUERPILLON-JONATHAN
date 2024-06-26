@@ -1,4 +1,4 @@
-### Application de Suivi de Projets de Recherche
+# Application de Suivi de Projets de Recherche
 
 ## Introduction
 
@@ -6,7 +6,7 @@ Cette application permet de gérer les informations sur les projets de recherche
 
 ## Installation
 
-# Backend
+### Backend
 
 1. Clonez le dépôt : git clone https://github.com/jonathan-gu/td-djangorestapi-GUERPILLON-JONATHAN.git
 2. Accédez au répertoire du projet : cd tddjangorestapi
@@ -14,7 +14,7 @@ Cette application permet de gérer les informations sur les projets de recherche
 4. Appliquez les migrations : python manage.py migrate
 5. Démarrez le serveur de développement : python manage.py runserver
 
-# Frontend
+### Frontend
 
 1. Accédez au répertoire frontend : cd frontend
 2. cd td-django-rest-front
@@ -23,7 +23,7 @@ Cette application permet de gérer les informations sur les projets de recherche
 
 ## API Endpoints
 
-# Chercheurs
+### Chercheurs
 
 • GET /api/chercheurs/ : Récupère la liste de tous les chercheurs.
 • GET /api/chercheurs/:id/ : Récupère les détails d'un chercheur spécifique.
@@ -34,7 +34,7 @@ Cette application permet de gérer les informations sur les projets de recherche
 • DELETE /api/chercheurs/:id/ : Supprime un chercheur spécifique.
     - Exemple : /api/chercheurs/1/ pour supprimer le chercheur avec l'ID 1.
 
-## Projets de Recherche
+### Projets de Recherche
 
 • GET /api/projets/ : Récupère la liste de tous les projets de recherche.
 • GET /api/projets/:id/ : Récupère les détails d'un projet de recherche spécifique.
@@ -45,7 +45,7 @@ Cette application permet de gérer les informations sur les projets de recherche
 • DELETE /api/projets/:id/ : Supprime un projet de recherche spécifique.
     - Exemple : /api/projets/1/ pour supprimer le projet de recherche avec l'ID 1.
 
-## Publications
+### Publications
 
 • GET /api/publications/ : Récupère la liste de toutes les publications.
     - Paramètres optionnels : ?year=2023 pour filtrer les publications par année.
@@ -57,7 +57,7 @@ Cette application permet de gérer les informations sur les projets de recherche
 • DELETE /api/publications/:id/ : Supprime une publication spécifique.
     - Exemple : /api/publications/1/ pour supprimer la publication avec l'ID 1.
 
-## Authentification
+### Authentification
 
 • POST /api/token/ : Obtient un token JWT pour l'authentification. (Envoyer les informations d'identification de l'utilisateur)
 • POST /api/token/refresh/ : Rafraîchit le token JWT. (Envoyer le token de rafraîchissement)
