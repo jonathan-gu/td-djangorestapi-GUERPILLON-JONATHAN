@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import axios, { AxiosResponse, AxiosError } from 'axios';
 import { Publication } from '../../interfaces/Publication';
 import './PublicationsTable.css';
+import { Link } from 'react-router-dom';
 
 const PublicationsTable: React.FC = () => {
   const [publications, setPublications] = useState<Publication[]>([]);
@@ -55,7 +56,7 @@ const PublicationsTable: React.FC = () => {
               <td>{publication.title}</td>
               <td>{publication.summary}</td>
               <td>{publication.publication_date}</td>
-              <td className='action'>Modifier</td>
+              <td><Link to={`/edit-publication/${publication.id}`}>Modifier</Link></td>
               <td className='action' onClick={() => onDelete(publication.id)}>Supprimer</td>
             </tr>
           ))}

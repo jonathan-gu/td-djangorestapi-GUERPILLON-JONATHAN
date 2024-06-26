@@ -4,6 +4,7 @@ export interface ResearcherProject {
     description: string;
     start_date: string;
     end_date_expected: string;
+    project_leader: number;
   }
 
 export default ResearcherProject

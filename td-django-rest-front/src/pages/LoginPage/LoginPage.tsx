@@ -12,7 +12,6 @@ const LoginForm: React.FC = () => {
 
   useEffect(() => {
     const get_expiration_date = localStorage.getItem('expiration_date')
-    console.log(get_expiration_date)
     if (get_expiration_date) {
       if (new Date(get_expiration_date) > new Date()) {
         navigate('/researchers')

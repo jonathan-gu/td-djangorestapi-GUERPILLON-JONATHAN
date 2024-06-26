@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios, { AxiosResponse, AxiosError } from 'axios';
 import Researcher from '../../interfaces/Researcher';
 import './ResearchersTable.css';
+import { Link } from 'react-router-dom';
 
 const ResearchersTable: React.FC = () => {
   const [researchers, setResearchers] = useState<Researcher[]>([]);
@@ -52,7 +53,7 @@ const ResearchersTable: React.FC = () => {
             <tr key={researcher.id}>
               <td>{researcher.name}</td>
               <td>{researcher.specialty}</td>
-              <td className='action'>Modifier</td>
+              <td><Link to={`/edit-researcher/${researcher.id}`}>Modifier</Link></td>
               <td className='action' onClick={() => onDelete(researcher.id)}>Supprimer</td>
             </tr>
           ))}

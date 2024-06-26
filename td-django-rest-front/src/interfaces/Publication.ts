@@ -4,5 +4,6 @@ export interface Publication {
     title: string;
     summary: string;
     publication_date: string;
+    associated_project: number;
   }
   
