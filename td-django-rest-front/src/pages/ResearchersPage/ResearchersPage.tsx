@@ -1,12 +1,12 @@
 import React from 'react';
 import './ResearchersPage.css'
-import Table from '../../components/Table/Table';
+import ResearchersTable from '../../components/ResearchersTable/ResearchersTable';
 
 const ResearchersPage: React.FC = () => {
   return (
     <>
       <h2>Chercheurs</h2>
-      <Table />
+      <ResearchersTable />
     </>
   )
 };

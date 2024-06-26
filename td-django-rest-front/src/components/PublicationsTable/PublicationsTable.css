@@ -1,4 +1,4 @@
-/* src/components/ResearchersTable/ResearchersTable.css */
+/* src/components/publicationsTable/publicationsTable.css */
 .table-container {
     margin: 20px;
     padding: 20px;
@@ -7,28 +7,28 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
   
-  .researchers-table {
+  .publications-table {
     width: 100%;
     border-collapse: collapse;
   }
   
-  .researchers-table th,
-  .researchers-table td {
+  .publications-table th,
+  .publications-table td {
     padding: 12px;
     text-align: left;
     border-bottom: 1px solid #ddd;
   }
   
-  .researchers-table th {
+  .publications-table th {
     background-color: #4CAF50;
     color: white;
   }
   
-  .researchers-table tr:nth-child(even) {
+  .publications-table tr:nth-child(even) {
     background-color: #f2f2f2;
   }
   
-  .researchers-table tr:hover {
+  .publications-table tr:hover {
     background-color: #ddd;
   }
   
