@@ -1,0 +1,34 @@
+/* src/components/ResearchersTable/ResearchersTable.css */
+.table-container {
+    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .researchers-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .researchers-table th,
+  .researchers-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .researchers-table th {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .researchers-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .researchers-table tr:hover {
+    background-color: #ddd;
+  }
+  
