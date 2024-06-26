@@ -21,6 +21,11 @@ Cette application permet de gérer les informations sur les projets de recherche
 3. Installez les dépendances : npm install
 4. Démarrez l'application React : npm run dev
 
+### Documentation
+
+• Swagger : http://localhost:8000/api/swagger/
+• Redoc : http://localhost:8000/api/redoc/
+
 ## API Endpoints
 
 ### Chercheurs
@@ -37,6 +42,10 @@ Cette application permet de gérer les informations sur les projets de recherche
 ### Projets de Recherche
 
 • GET /api/projets/ : Récupère la liste de tous les projets de recherche.
+    - Paramètre optionnel : ?start_date=2024-06-26 | pour récupérer projets avec une date de début du 26 juin 2026.
+    - Paramètre optionnel : ?end_date_expected=2024-06-26 | pour récupérer projets avec une date de fin du 26 juin 2026.
+    - Paramètre optionnel : ?project_leader=Louis Pasteur | pour les projets qui ont comme chercheur "Louis Pasteur".
+    - Paramètre optionnel : ?title=Recherche Quantitque | pour les projets qui ont comme titre "Recherche quantique".
 • GET /api/projets/:id/ : Récupère les détails d'un projet de recherche spécifique.
     - Exemple : /api/projets/1/ pour récupérer le projet de recherche avec l'ID 1.
 • POST /api/projets/ : Crée un nouveau projet de recherche.
@@ -48,7 +57,7 @@ Cette application permet de gérer les informations sur les projets de recherche
 ### Publications
 
 • GET /api/publications/ : Récupère la liste de toutes les publications.
-    - Paramètres optionnels : ?year=2023 pour filtrer les publications par année.
+    - Paramètres optionnel : ?publication_date=2024-06-26 pour récupérer les publication du 26 juin 2026.
 • GET /api/publications/:id/ : Récupère les détails d'une publication spécifique.
     - Exemple : /api/publications/1/ pour récupérer la publication avec l'ID 1.
 • POST /api/publications/ : Crée une nouvelle publication.
@@ -60,4 +69,3 @@ Cette application permet de gérer les informations sur les projets de recherche
 ### Authentification
 
 • POST /api/token/ : Obtient un token JWT pour l'authentification. (Envoyer les informations d'identification de l'utilisateur)
-• POST /api/token/refresh/ : Rafraîchit le token JWT. (Envoyer le token de rafraîchissement)
