@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from .models import ResearchProject, Researcher
-from .serializers import ResearchProjectSerializer, ResearcherSerializer
+from .models import ResearchProject, Researcher, Publication
+from .serializers import ResearchProjectSerializer, ResearcherSerializer, PublicationSerializer
 
 # Create your views here.
 
@@ -11,3 +11,7 @@ class ResearchProjectViewSet(viewsets.ModelViewSet):
 class ResearcherViewSet(viewsets.ModelViewSet):
     queryset = Researcher.objects.all()
     serializer_class = ResearcherSerializer
+
+class PublicationViewSet(viewsets.ModelViewSet):
+    queryset = Publication.objects.all()
+    serializer_class = PublicationSerializer
